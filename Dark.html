@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Café | Every Cup Tells a Story</title>
+    
+    <!-- 
+      ==================================================================
+      [STYLESHEETS & FONTS]
+      Essential CSS architecture, icon libraries, and custom typography.
+      ==================================================================
+    -->
+    <!-- Core Application Dark Theme Styling -->
+    <link rel="stylesheet" href="dark.css">
+    
+    <!-- FontAwesome Vector Icon Library v6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- DNS Prefetch & Preconnect Optimizations for Web Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Typography Configurations: Playfair Display (Serif) & Poppins (Sans-Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 
+      ==================================================================
+      [MAIN SITE NAVIGATION]
+      Global header featuring responsive branding and a semantic CSS-only 
+      hamburger navigation mechanism.
+      ==================================================================
+    -->
+    <header class="navbar">
+        <!-- Brand Identity Container -->
+        <div class="nav-logo">
+            <a href="#home">Aura Café</a>
+        </div>
+        
+        <!-- CSS-Only Hamburger Menu Controller (State Tracker) -->
+        <input type="checkbox" id="menu-toggle-checkbox" class="nav-checkbox">
+        
+        <!-- Hamburger UI Icon Interface (Triggers state transition via connected input) -->
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        
+        <!-- Navigation Link Matrix (Internal anchor targets & application mode toggles) -->
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="index.html">Light Mode</a>
+        </nav>
+    </header>
+
+    <!-- 
+      ==================================================================
+      [HERO SECTION]
+      Primary entry point section. Features high-impact value proposition 
+      statements overlaying a full-screen dynamic background element.
+      ==================================================================
+    -->
+    <section id="home" class="hero-section">
+        <!-- Visual Layer Filter for Text Legibility Optimization -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Messaging Content Block -->
+        <div class="hero-content">
+            <h1>Every Cup Tells a Story</h1>
+            <p>Freshly brewed coffee, handcrafted pastries, and a welcoming atmosphere in the heart of the city.</p>
+            
+            <!-- Primary & Secondary CTA Action Links -->
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-secondary">View Menu</a>
+                <a href="#contact" class="btn btn-primary">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [ABOUT US SECTION]
+      Narrative focus layout communicating brand heritage, ethical sourcing, 
+      and core operational missions.
+      ==================================================================
+    -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About Aura Café</h2>
+            <div class="section-divider"></div>
+            <p>Aura Café was founded with a simple mission: to create a warm space where people can enjoy exceptional coffee and meaningful conversations.</p>
+            <p>Every bean is carefully sourced, every drink is crafted with passion, and every guest is welcomed like family.</p>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [SERVICES & EXPERIENCES]
+      Responsive flex/grid layout summarizing core consumer-facing value 
+      propositions, spaces, and event-hosting amenities.
+      ==================================================================
+    -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="section-divider"></div>
+        <div class="services-grid">
+            
+            <!-- Core Service Card 01: Beverage Offerings -->
+            <div class="service-card">
+                <i class="fas fa-coffee card-icon"></i>
+                <h3>Premium Coffee</h3>
+                <p>Single-origin beans brewed by skilled baristas.</p>
+            </div>
+
+            <!-- Core Service Card 02: Culinary Offerings -->
+            <div class="service-card">
+                <i class="fas fa-bread-slice card-icon"></i>
+                <h3>Fresh Bakery</h3>
+                <p>Freshly baked pastries and artisan desserts every day.</p>
+            </div>
+
+            <!-- Core Service Card 03: Workspace Ambiance -->
+            <div class="service-card">
+                <i class="fas fa-laptop card-icon"></i>
+                <h3>Free Workspace</h3>
+                <p>Comfortable seating, Wi-Fi, and charging stations.</p>
+            </div>
+
+            <!-- Core Service Card 04: Space Reservations -->
+            <div class="service-card">
+                <i class="fas fa-calendar-check card-icon"></i>
+                <h3>Private Events</h3>
+                <p>Host meetings, celebrations, and community gatherings.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [STATISTICS / SOCIAL PROOF INFOGRAPHIC]
+      Quantitative metrics segment using overlay graphics to validate 
+      operational history and customer satisfaction.
+      ==================================================================
+    -->
+    <section id="statistics" class="stats-section">
+        <!-- Visual Backdrop Layer -->
+        <div class="stats-overlay"></div>
+        
+        <!-- Numerical Metrics Grid -->
+        <div class="stats-container">
+            
+            <!-- Metric Counter 01: Industry Presence -->
+            <div class="stat-item">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Years of Service</div>
+            </div>
+
+            <!-- Metric Counter 02: Scale of Base -->
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+
+            <!-- Metric Counter 03: Inventory/Product Variety -->
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Coffee Varieties</div>
+            </div>
+
+            <!-- Metric Counter 04: Aggregated Customer Satisfaction -->
+            <div class="stat-item">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [VISUAL ASSETS GALLERY]
+      Media exhibition showcasing spatial aesthetics, product presentations, 
+      and operational interactions.
+      ==================================================================
+    -->
+    <section id="gallery" class="gallery-section">
+        <h2>Our Gallery</h2>
+        <div class="section-divider"></div>
+        <div class="gallery-grid">
+            
+            <!-- Media Display Block 01: Pour-over / Brewing Technique -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Coffee Brewing">
+                <div class="gallery-info">
+                    <h4>Coffee Brewing</h4>
+                </div>
+            </div>
+
+            <!-- Media Display Block 02: Latte Craft / Presentation -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop" alt="Latte Art">
+                <div class="gallery-info">
+                    <h4>Latte Art</h4>
+                </div>
+            </div>
+
+            <!-- Media Display Block 03: Pastry Selection / Baking -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" alt="Fresh Pastries">
+                <div class="gallery-info">
+                    <h4>Fresh Pastries</h4>
+                </div>
+            </div>
+
+            <!-- Media Display Block 04: Interior Space / Seating Design -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600&auto=format&fit=crop" alt="Cozy Interior">
+                <div class="gallery-info">
+                    <h4>Cozy Interior</h4>
+                </div>
+            </div>
+
+            <!-- Media Display Block 05: Raw Agricultural Assets / Sourcing -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=600&auto=format&fit=crop" alt="Coffee Beans">
+                <div class="gallery-info">
+                    <h4>Coffee Beans</h4>
+                </div>
+            </div>
+
+            <!-- Media Display Block 06: Exterior / Alfresco Amenities -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?q=80&w=600&auto=format&fit=crop" alt="Outdoor Seating">
+                <div class="gallery-info">
+                    <h4>Outdoor Seating</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [CUSTOMER INQUIRY & COMMUNICATIONS SYSTEM]
+      Interactive user submission interface built to capture lead and data 
+      streams safely via accessibility-compliant form nodes.
+      ==================================================================
+    -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="section-divider"></div>
+        <div class="contact-container">
+            <!-- Form Node configuration (Includes validation structures) -->
+            <form class="contact-form" onsubmit="return false;">
+                
+                <!-- Text Input Container: Sender Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+
+                <!-- Email Input Container: Communication Channel Routing -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+
+                <!-- Telephone Input Container: Direct Contact Verification -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+94 77 123 4567" required>
+                </div>
+
+                <!-- Textarea Area: Comprehensive Query Payload -->
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+
+                <!-- Form Submission Endpoint -->
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- 
+      ==================================================================
+      [GLOBAL SYSTEM FOOTER]
+      Terminal layout summarizing identity metadata, active points of contact, 
+      and outbound platform networks.
+      ==================================================================
+    -->
+    <footer class="main-footer">
+        <!-- Main Structured Content Core -->
+        <div class="footer-container">
+            
+            <!-- Branding/Identity Column -->
+            <div class="footer-brand">
+                <h3>Aura Café</h3>
+                <p>Crafting memorable coffee experiences every day.</p>
+            </div>
+
+            <!-- Operational Communications / Contact Info Column -->
+            <div class="footer-contact">
+                <h4>Get In Touch</h4>
+                <p><i class="fas fa-envelope"></i> hello@auracafe.com</p>
+                <p><i class="fas fa-phone"></i> +94 77 123 4567</p>
+            </div>
+
+            <!-- Syndicated Platform Connectors / Social Links Column -->
+            <div class="footer-socials">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright Enforcement & Compliance Metrics Footer Strip -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aura Café. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,723 @@
+/* ==========================================================================
+   CSS RESET & GLOBAL STYLES
+   ========================================================================== */
+
+/* Universal Reset: Standard practice to clear out browser-default margins and paddings 
+   so the layout renders consistently across various browsers like Chrome, Safari, Edge */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the total element width and height calculation */
+}
+
+/* Base HTML Configuration */
+html {
+    scroll-behavior: smooth; /* Enables elegant animated scrolling when jumping between links on the page */
+    font-size: 16px; /* Base absolute metric reference point for rem sizing logic */
+}
+
+/* Global Body Styling rules */
+body {
+    font-family: 'Poppins', sans-serif; /* Clean, modern, easy-to-read sans-serif font for standard body elements */
+    background-color: #F8F4EE; /* Light Cream background palette shade */
+    color: #2B2B2B; /* Dark Text palette selection for optimal readability standard */
+    line-height: 1.6; /* Adjust line spacing to improve readability across dense text segments */
+    overflow-x: hidden; /* Defends page wrapper against horizontal breakage from container element bleedouts */
+}
+
+/* Typography Headings setup */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Classic, elegant premium serif typeface optimized for structural headers */
+    color: #4A2C2A; /* Dark Coffee color for visual accent hierarchy */
+    font-weight: 700;
+}
+
+/* Universal Section Divider graphic line styling rules */
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #C89B3C; /* Accent Gold color */
+    margin: 15px auto 40px auto; /* Centers the divider line neatly with breathing room below */
+}
+
+
+/* ==========================================================================
+   REUSABLE COMPONENTS (BUTTONS & COMPONENT CARDS)
+   ========================================================================== */
+
+/* Generic Base Button configurations setup */
+.btn {
+    display: inline-block; /* Allows structural sizing elements like padding to apply reliably */
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none; /* Removes the underline from link anchors */
+    border-radius: 4px; /* Standard smooth rounding edges design format */
+    transition: all 0.3s ease; /* Interpolation timing variable for smooth changes on hover states */
+    cursor: pointer;
+}
+
+/* Primary Accent Action Button layout */
+.btn-primary {
+    background-color: #6F4E37; /* Primary Coffee Brown */
+    color: #FFFFFF; /* White Text */
+    border: 2px solid #6F4E37;
+}
+
+/* Hover rule configuration for primary call elements */
+.btn-primary:hover {
+    background-color: #4A2C2A; /* Darkens to Dark Coffee on hover */
+    border-color: #4A2C2A;
+    transform: translateY(-3px); /* Lifts the button slightly upward */
+    box-shadow: 0 5px 15px rgba(74, 44, 42, 0.3); /* Adds a subtle drop shadow on hover */
+}
+
+/* Secondary Graphic Inverse action button */
+.btn-secondary {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF; /* Crisp solid frame boundary */
+}
+
+/* Hover state styling rules for secondary interaction links */
+.btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #6F4E37; /* Switches text color to Coffee Brown */
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Full Width Form Action Overwrite implementation utility */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   NAVIGATION BAR (WITH PURE CSS NO-JS TOGGLE MECHANICS)
+   ========================================================================== */
+
+.navbar {
+    position: fixed; /* Keeps the navbar pinned to the top of the screen as the user scrolls */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* High z-index ensures the header sits on top of all other elements */
+    background-color: #FFFFFF; /* Pure White background */
+    display: flex; /* Flexbox organizes items in a clean row alignment pattern */
+    justify-content: space-between; /* Pushes logo to the left and navigation menu to the structural right edge */
+    align-items: center; /* Vertically centers the logo and links */
+    padding: 20px 8%; /* Side padding keeps elements centered with breathing room on large screens */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Slight shadow below navigation bar for depth separation */
+}
+
+/* Left Brand Header link logo text design */
+.nav-logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #4A2C2A; /* Dark Coffee */
+    text-decoration: none;
+}
+
+/* Completely hide the functional checkbox element visually */
+.nav-checkbox {
+    display: none;
+}
+
+/* Hidden by default on desktop screens */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Three bars of the hamburger icon */
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #4A2C2A; /* Dark Coffee colored burger bars for light mode */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Nav links structural wrap element container */
+.nav-links {
+    display: flex;
+    gap: 30px; /* Space between links using Flexbox gap properties */
+}
+
+/* Anchor navigational item basic specs */
+.nav-links a {
+    text-decoration: none;
+    color: #2B2B2B; /* Dark Text */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transitions color changes smoothly */
+}
+
+/* Anchor hovering color transformations */
+.nav-links a:hover {
+    color: #C89B3C; /* Accent Gold text on hover */
+}
+
+
+/* ==========================================================================
+   SECTION 1: HERO SECTION
+   ========================================================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Sets height to 100% of the user's viewport height */
+    /* Background setup uses an ultra-high resolution stock photo from Unsplash */
+    background-image: url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover; /* Resizes image to cover the entire container without distorting proportions */
+    background-position: center; /* Keeps center items in target alignment focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Dark Screen Overlay for readability enhancement */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Translucent pure black; 60% opacity */
+    z-index: 1; /* Sits behind text content but in front of raw background image */
+}
+
+/* Context Frame grouping containing typography and button callouts */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Sits cleanly on top of the dark background mask overlay */
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Primary Page Header typography overlay layout specs */
+.hero-content h1 {
+    font-size: 4rem; /* Exceptionally large elegant title structure */
+    color: #F8F4EE; /* Light Cream text color overrides the dark image theme */
+    margin-bottom: 20px;
+}
+
+/* Supporting hero body text paragraph style settings */
+.hero-content p {
+    font-size: 1.25rem;
+    color: #E7D7C9; /* Warm Beige tone color pairing */
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* Flex layout spacing properties inside hero button blocks */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* ==========================================================================
+   SECTION 2: ABOUT SECTION
+   ========================================================================== */
+
+.about-section {
+    padding: 100px 0; /* Creates generous vertical padding to give content breathing room */
+    background-color: #F8F4EE; /* Light Cream background */
+    text-align: center;
+}
+
+/* Content tracking framework for maximum readability widths */
+.about-container {
+    max-width: 700px; /* Limits reading text lines to an optimal readability window */
+    margin: 0 auto; /* Horizontal Auto-centering strategy */
+    padding: 0 20px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+}
+
+/* Inner block typography for standard text layout arrays */
+.about-section p {
+    font-size: 1.1rem;
+    color: #2B2B2B; /* Dark Text */
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================================
+   SECTION 3: SERVICES SECTION
+   ========================================================================== */
+
+.services-section {
+    padding: 100px 8%;
+    background-color: #FFFFFF; /* Pure White background separates it visually from About section */
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+}
+
+/* CSS Grid layout implementation for structural service item cards */
+.services-grid {
+    display: grid;
+    /* grid-template-columns sets columns automatically. 
+       minmax(250px, 1fr) ensures elements shrink to fit or expand up to equal fraction size (1fr), 
+       preventing layout breakages down to mobile widths */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Uniform spacing between column rows and column items */
+    margin-top: 20px;
+}
+
+/* Card Element definitions box specifications */
+.service-card {
+    background-color: #F8F4EE; /* Light Cream background */
+    padding: 40px 30px;
+    border-radius: 4px;
+    border: 1px solid #E7D7C9; /* Warm Beige border line accent */
+    transition: all 0.3s ease; /* Animates shadow and lift properties altogether */
+}
+
+/* Display rules defining icon highlights within element cards */
+.card-icon {
+    font-size: 2.5rem;
+    color: #6F4E37; /* Primary Coffee Brown */
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #2B2B2B;
+}
+
+/* Hover animations updating service card elevation states */
+.service-card:hover {
+    transform: translateY(-10px); /* Moves cards 10px upward */
+    box-shadow: 0 15px 30px rgba(111, 78, 55, 0.15); /* Adds a deeper drop shadow on hover */
+    border-color: #C89B3C; /* Accents border line matching Gold */
+}
+
+
+/* ==========================================================================
+   SECTION 4: STATISTICS SECTION
+   ========================================================================== */
+
+.stats-section {
+    position: relative;
+    padding: 80px 8%;
+    background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax scrolling effect on modern desktop devices */
+    text-align: center;
+}
+
+/* Darkening layer overlay specific to statistics container */
+.stats-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 44, 42, 0.85); /* 85% opacity Dark Coffee layer tint for maximum contrast */
+}
+
+/* Internal context layout bounds setting metric paths */
+.stats-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap; /* Allows row items to wrap onto new lines on small mobile devices */
+    justify-content: space-around;
+    gap: 40px;
+}
+
+/* Standard singular statistical metrics block */
+.stat-item {
+    flex: 1 1 200px; /* Flex shorthand growing and shrinking symmetrically relative to base size layout metrics */
+}
+
+/* High impact typography numeric styling */
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #C89B3C; /* Accent Gold numbers */
+    margin-bottom: 5px;
+}
+
+/* Data metrics text label alignment descriptors */
+.stat-label {
+    font-size: 1.1rem;
+    color: #FFFFFF; /* High contrast text color */
+    font-weight: 400;
+}
+
+
+/* ==========================================================================
+   SECTION 5: GALLERY SECTION
+   ========================================================================== */
+
+.gallery-section {
+    padding: 100px 8%;
+    background-color: #F8F4EE;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+}
+
+/* Precise CSS Grid configuration layout blueprint matrix mapping */
+.gallery-grid {
+    display: grid;
+    /* Three-column display on desktops, adapts downwards seamlessly based on minmax parameters */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Container defining image frame properties and crop definitions */
+.gallery-card {
+    position: relative;
+    height: 250px;
+    overflow: hidden; /* Clips any oversized images expanding out of bounds */
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Full frame scaling rule configuration applied across nested image properties */
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fits images precisely inside the container bounds without distortion */
+    transition: transform 0.5s ease; /* Creates a smooth zoom transition on hover */
+}
+
+/* Information dynamic block layer overlay setting default transparency states */
+.gallery-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(111, 78, 55, 0.9); /* Primary Coffee Brown tint overlay at 90% opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Fully transparent by default */
+    transition: opacity 0.4s ease; /* Fades in smoothly on hover */
+}
+
+/* Overlay text styling */
+.gallery-info h4 {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+}
+
+/* Compound selector handling interactions on hovering across image blocks */
+.gallery-card:hover img {
+    transform: scale(1.1); /* Subtle zoom effect on the image */
+}
+
+.gallery-card:hover .gallery-info {
+    opacity: 1; /* Reveals the information overlay on hover */
+}
+
+
+/* ==========================================================================
+   SECTION 6: CONTACT SECTION
+   ========================================================================== */
+
+.contact-section {
+    padding: 100px 8%;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+}
+
+/* Max layout boundaries framework bounding contact forms */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #F8F4EE; /* Light Cream background */
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid #E7D7C9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Row separation elements within form segments */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left; /* Left-aligns labels for clear forms tracking UI/UX principles */
+}
+
+/* Form descriptor typography settings */
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #4A2C2A; /* Dark Coffee text color */
+}
+
+/* General standard textual processing form element configuration */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    border: 1px solid #E7D7C9;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    color: #2B2B2B;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus outlines */
+}
+
+/* Textarea specific dynamic resize lock constraints */
+.form-group textarea {
+    resize: vertical; /* Allows text areas to be scaled vertically only, protecting site layouts from breaking horizontally */
+}
+
+/* Interactive focus tracker border indicators layout definitions */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Disables standard ugly blue browser focus ring default indicator frames */
+    border-color: #6F4E37; /* Highlights border with Coffee Brown on focus */
+    box-shadow: 0 0 5px rgba(111, 78, 55, 0.2); /* Soft ambient focus glow */
+}
+
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+
+.main-footer {
+    background-color: #4A2C2A; /* Dark Coffee primary solid block background */
+    color: #F8F4EE; /* Light Cream text contrast layout settings */
+    padding: 60px 8% 20px 8%;
+}
+
+/* Three-column footer container structural mapping strategy */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows multi line column drops across varying browser configurations */
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Flex sizing rules distributing text elements accurately within footer modules */
+.footer-brand, .footer-contact, .footer-socials {
+    flex: 1 1 250px; /* Adapts flexibly down to a 250px base row metric structure */
+}
+
+.footer-brand h3 {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #E7D7C9; /* Warm Beige text color */
+    max-width: 300px;
+}
+
+.footer-contact h4, .footer-socials h4 {
+    color: #C89B3C; /* Accent Gold headings */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-contact p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #E7D7C9;
+}
+
+/* Icon separation offsets tracking elements neatly */
+.footer-contact i {
+    margin-right: 10px;
+    color: #C89B3C;
+}
+
+/* Container grouping social platform link tags */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Anchor styling tracking network graphic loops circles frames */
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Pure perfect structural circle profiles shape layout config */
+    background-color: rgba(255, 255, 255, 0.05); /* Very light ambient mask ring background */
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Multi-property transformations triggered on user interaction vectors */
+.social-icons a:hover {
+    background-color: #C89B3C; /* Accent Gold background on hover */
+    color: #4A2C2A; /* Dark Coffee text color on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Bottom base divider bar line separating copyright blockages */
+.footer-bottom {
+    border-top: 1px solid rgba(231, 215, 201, 0.1); /* Ultra thin transparent beige border line separator */
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #E7D7C9;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (PURE CSS NO-JS BREAKPOINTS)
+   ========================================================================== */
+
+/* TABLET BREAKPOINT (768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Global Section scale structural adjustments tracking mobile spaces */
+    .about-section, .services-section, .gallery-section, .contact-section {
+        padding: 70px 5%; /* Shrinks side and top padding on medium screens */
+    }
+
+    /* Primary viewport header resizing down elements to preserve frame proportions */
+    .hero-content h1 {
+        font-size: 3rem; /* Slightly smaller typography matching scaled tablet boundaries */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    /* Readjust statistical modules to sit along separate clean rows */
+    .stats-container {
+        gap: 30px;
+    }
+    
+    .stat-item {
+        flex: 1 1 40%; /* Each statistic item fills 40% width, scaling it to a clean 2x2 grid */
+    }
+
+    /* Activate responsive dropdown label toggle menu button logic */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Structural transformation converting desktop menu bar to full-width drawer list stack */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Spawns neatly flush below the main white header strip frame boundary */
+        left: 0;
+        width: 100%;
+        background-color: #FFFFFF; /* White list drawer panel tracking layout color rules */
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        max-height: 0; /* Fully collapsed state logic settings metrics */
+        overflow: hidden; /* Clips out floating menu elements inside zero-height zones */
+        transition: max-height 0.4s ease-in-out; /* Animates slide transitions seamlessly */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Link formatting adjustments specific to responsive panel links context array */
+    .nav-links a {
+        display: block;
+        padding: 18px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03); /* Subtle light division line element */
+    }
+
+    /* PURE CSS MECHANIC: When checkbox is checked, expand height bounds to reveal stacked buttons */
+    .nav-checkbox:checked ~ .nav-links {
+        max-height: 350px;
+    }
+
+    /* Transform hamburger line elements into close cross geometry when active */
+    .nav-checkbox:checked ~ .menu-toggle .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .nav-checkbox:checked ~ .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-checkbox:checked ~ .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* MOBILE BREAKPOINT (480px) */
+@media screen and (max-width: 480px) {
+    
+    /* Core Hero tracking adjustments */
+    .hero-content h1 {
+        font-size: 2.2rem; /* Compact typography title sizing for small smartphone screens */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Stacks hero CTA buttons vertically on mobile screens for easier thumb-tapping */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto; /* Centers the button column container stack neatly */
+    }
+
+    .btn {
+        width: 100%; /* forces actions to occupy native tracking container blocks */
+        text-align: center;
+    }
+
+    /* Structural Grid collapse constraints handling card layout grids */
+    .services-grid, .gallery-grid {
+        grid-template-columns: 1fr; /* Forces grids to stack in a clean, uniform 1-column layout on mobile */
+    }
+
+    /* Adapts statistics to a single vertical column on mobile screens */
+    .stat-item {
+        flex: 1 1 100%;
+    }
+
+    /* Shrinks contact form layout padding on small screens to maximize typing space */
+    .contact-container {
+        padding: 25px 15px;
+    }
+}
